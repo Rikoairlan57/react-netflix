@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { UserAuth } from "../context/AuthContext";
-import { Link } from "react-router-dom";
+
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -38,7 +38,7 @@ const Movie = ({ item }) => {
       />
       <div className="absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white">
         <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
-          <Link to={`/movie/${item?.id}`}>{item?.title}</Link>
+          {item?.title}
         </p>
         <p onClick={saveShow}>
           {like ? (
