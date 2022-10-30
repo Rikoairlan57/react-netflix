@@ -4,6 +4,7 @@ import { UserAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
@@ -30,7 +31,7 @@ const Movie = ({ item }) => {
 
   return (
     <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2">
-      <img
+      <LazyLoadImage
         className="w-full h-auto block"
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
